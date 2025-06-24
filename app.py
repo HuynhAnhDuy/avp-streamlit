@@ -10,6 +10,21 @@ from PIL import Image
 
 st.set_page_config(page_title="AVP & Virus-specific Predictor", layout="centered")
 
+# === Virus Descriptions ===
+VIRUS_DESCRIPTIONS = {
+    "HCV": "Hepatitis C Virus",
+    "HSV1": "Herpes Simplex Virus Type 1",
+    "DENV2": "Dengue Virus Type 2",
+    "RSV": "Respiratory Syncytial Virus A",
+    "INFVA": "Influenza A Virus",
+    "SNV": "Sin Nombre Virus",
+    "HPIV3": "Human Parainfluenza Virus Type 3",
+    "FIV": "Feline Immunodeficiency Virus",
+    "SARS": "SARS Coronavirus 2",
+    "ANDV": "Andes Virus",
+    "VACV": "Vaccinia Virus",
+    "HBV": "Hepatitis B Virus"
+}
 # === Header & Intro ===
 st.title("🧬 AVP & Virus-specific Predictor")
 st.markdown("""
@@ -30,7 +45,8 @@ with st.sidebar:
     4. Download the results.
     """)
     st.subheader("📌 Virus Targets")
-    st.write(", ".join(VIRUS_LABELS))
+    for label in VIRUS_LABELS:
+        st.markdown(f"- **{label}**: {VIRUS_DESCRIPTIONS.get(label, 'Unknown')}")
 
 # === Sequence Input ===
 st.markdown("---")
