@@ -1,4 +1,4 @@
-# app.py – Enhanced AVP Predictor with UI improvements
+# app.py – Enhanced AVP Predictor with visit counter
 
 import streamlit as st
 from main import predict
@@ -7,8 +7,20 @@ import pandas as pd
 import io
 import sys
 from PIL import Image
+import os
 
 st.set_page_config(page_title="AVP & Virus-specific Predictor", layout="centered")
+
+# === Update and display visit count ===
+counter_file = "usage_counter.txt"
+if os.path.exists(counter_file):
+    with open(counter_file, "r") as f:
+        count = int(f.read().strip())
+else:
+    count = 0
+count += 1
+with open(counter_file, "w") as f:
+    f.write(str(count))
 
 # === Virus Descriptions ===
 VIRUS_DESCRIPTIONS = {
@@ -25,6 +37,7 @@ VIRUS_DESCRIPTIONS = {
     "VACV": "Vaccinia Virus",
     "HBV": "Hepatitis B Virus"
 }
+
 # === Header & Intro ===
 st.title("🧬 AVP & Virus-specific Predictor")
 st.markdown("""
@@ -129,9 +142,9 @@ with col1:
     st.markdown("""
     **Huynh Anh Duy**  
     Can Tho University, Vietnam  
-    PhD Candidate, Khon Kaen University, Thailand
+    PhD Candidate, Khon Kaen University, Thailand  
     *Cheminformatics, QSAR Modeling, Computational Drug Discovery and Toxicity Prediction*  
-    📧 [huynhanhduy.h@kkumail.com](mailto:huynhanhduy.h@kkumail.com) [haduy@ctu.edu.vn](mailto:haduy@ctu.edu.vn)
+    📧 [huynhanhduy.h@kkumail.com](mailto:huynhanhduy.h@kkumail.com), [haduy@ctu.edu.vn](mailto:haduy@ctu.edu.vn)
     """)
 
 with col2:
@@ -148,3 +161,4 @@ with col2:
 # === Footer Debug ===
 st.markdown("---")
 st.caption(f"Python version: {sys.version}")
+st.markdown(f"📊 **Total visits to this app:** `{count}`")
