@@ -83,3 +83,6 @@ if uploaded_file:
                 )
     except Exception as e:
         st.error(f"❌ Error reading CSV: {e}")
+
+import streamlit as st, sys
+st.write("🔎 Python version used:", sys.version)
