@@ -44,9 +44,9 @@ st.markdown("""
 This web server uses a deep learning model to predict antiviral peptides (AVPs) and their virus-specific activity.
 
 **Model:** BiLSTM with k-mer representation  
-**Developers:** Huynh Anh Duy*, Tarapong Srisongkram**  
-**Affiliations:** Can Tho University*, Khon Kaen University**  
-""")
+**Developers:** Huynh Anh Duy<sup>1,2</sup>, Tarapong Srisongkram<sup>2</sup>  
+**Affiliations:** <sup>1</sup>Can Tho University, Vietnam; <sup>2</sup>Khon Kaen University, Thailand
+""", unsafe_allow_html=True)
 
 # === Sidebar Instructions ===
 with st.sidebar:
