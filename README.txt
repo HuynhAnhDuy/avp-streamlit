@@ -23,12 +23,10 @@ The tool is implemented in Python and deployed as an interactive **Streamlit app
 ## 🚀 Getting Started
 
 🔗 **Access the web application here**:  
-👉 [https://your-app-name.streamlit.app](https://your-app-name.streamlit.app)
+👉 [https://avp-predictor.streamlit.app]
 
 > Replace the above link with your actual Streamlit URL
-
 ---
-
 ### ✅ Option 1: Single Sequence Prediction
 
 1. Enter your peptide sequence (e.g. `KLWKKLLKKLLKAA`)
@@ -38,45 +36,32 @@ The tool is implemented in Python and deployed as an interactive **Streamlit app
    - AVP probability
    - Whether the peptide is likely antiviral
    - Virus-specific predictions if AVP ≥ threshold
-
 ---
-
 ### ✅ Option 2: Batch Prediction via CSV Upload
 
 1. Prepare a `.csv` file with the following format:
-
-
 2. Upload the file using the **Upload section**
 3. Click **"Run batch prediction"**
 4. A result table will be displayed and available for **download as `.csv`**
-
 ---
-
 ## 📤 Output Examples
-
 ### ✅ Terminal-like Output (Single Prediction)
 AVP probability: 0.823
 Likely virus targets (prob ≥ 0.5):
 DENV2 : 0.766
 SNV : 0.661
 VACV : 0.534
-
-
 ---
-
 ### ✅ Batch CSV Output Example
 
 | sequence        | AVP_prob | AVP_candidate | DENV2 | SNV  | VACV | ... |
 |-----------------|----------|---------------|-------|------|------|-----|
 | KLWKKLLKKLLKAA  | 0.823    | Yes           | 0.766 | 0.66 | 0.53 | ... |
 | GLFDIIKKIAESF   | 0.233    | -             |   -   |  -   |  -   | ... |
-
 ---
-
 ## 🦠 Supported Virus Targets (12)
 
 The model provides predictions for the following viruses:
-
 - HCV (Hepatitis C Virus)
 - HSV1 (Herpes Simplex Virus Type 1)
 - DENV2 (Dengue Virus Type 2)
@@ -89,34 +74,22 @@ The model provides predictions for the following viruses:
 - ANDV (Andes Virus)
 - VACV (Vaccinia Virus)
 - HBV (Hepatitis B Virus)
-
 ---
-
 ## 🛠️ Technology Stack
-
 - Python 3
 - TensorFlow / Keras
 - Scikit-learn
 - Pandas / NumPy
 - Streamlit
-
 ---
-
 ## 📬 Contact & Support
-
-- **Lead Developer**: Huynh Anh Duy  
-- **Research Advisor**: Tarapong Srisongkram  
-- **Emails**: `haduy@ctu.edu.vn`, `tarasri@kku.ac.th`  
-- **Institution**: Khon Kaen University, Thailand / Can Tho University, Vietnam
-
+- Developers: Huynh Anh Duy (1,2), Tarapong Srisongkram (2)
+- Affiliations: (1) Can Tho University, Vietnam; (2) Khon Kaen University, Thailand
+- Contact email: huynhanhduy.h@kkumail.com or tarasri@kku.ac.th
 ---
-
 ## 📌 Version Info
-
 - **Version**: 1.0  
 - **Last updated**: June 2025  
 - **License**: Academic / Research use only
-
 ---
-
 **Thank you for using AVP Predictor Tool!**
